@@ -7,7 +7,7 @@ from keras.preprocessing.image import load_img, img_to_array
 from keras.models import Model
 
 
-BASE_DIR = 'C:/Users/Elie/Documents/CIS 511' #Directory that contains the Flicker8k data
+BASE_DIR = 'Documents/CIS 511' #Directory that contains the Flicker8k data
 feature_dict = {}
 vgg_model = VGG16()
 vgg_model = Model(inputs = vgg_model.inputs, outputs = vgg_model.layers[-2].output)
@@ -49,4 +49,5 @@ if __name__ == '__main__':
         print('Cleaning up image descriptions...')
         df.loc[:,'caption'] = df['caption'].progress_apply(filterCaptions)
         df.to_csv('Descriptions.csv', index=False)
+
    
